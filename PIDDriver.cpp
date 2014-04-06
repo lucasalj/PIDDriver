@@ -20,11 +20,20 @@ getGear(CarState & cs) {
 	int current_gear = cs.getGear();
 	if(!current_gear) return 1;
 
-	if(cs.getRpm() > 8000) ++current_gear;
-	else if(current_gear > 1 && cs.getRpm() < 5000) --current_gear;
+	if(current_gear > 1 && current_gear < 4 && cs.getRpm() < 1500)
+		return(current_gear - 1);
+
+	if(current_gear < 3 && cs.getRpm() > 5000)
+		return(current_gear + 1);
+
+	if(current_gear >= 3 && cs.getRpm() > 8000)
+		return(current_gear + 1);
+
+	if(current_gear >= 4 && cs.getRpm() < 4000)
+		return(current_gear - 1);
+
 	return current_gear;
 }
-
 float
 getSteering(CarState & cs) {
 	// based on Loiacono's SimpleDriver
