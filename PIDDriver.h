@@ -1,4 +1,3 @@
-
 /** @file PIDDriver.h
   *
   * Describes the PIDDriver. 
@@ -23,8 +22,8 @@
   /** @todo verificar se este valor está correto. */
 
 #define FINAL_SPEED 160 /** @todo Definir corretamente */
-#define KP 0.1   /** @todo Definir corretamente */
-#define KI 0.01  /** @todo Definir corretamente */
+#define KP 0.001   /** @todo Definir corretamente */
+#define KI 0.05  /** @todo Definir corretamente */
 #define KD 0.005 /** @todo Definir corretamente */
 
 class PIDDriver:public BaseDriver {
